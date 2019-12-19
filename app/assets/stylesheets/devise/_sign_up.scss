@@ -1,0 +1,25 @@
+.contents{
+  margin: 10px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    .field input{padding: 10px;
+      font-size: 1.3em;
+      font-family: Arial, sans-serif;
+      color: #333;
+      border: solid 1px #ccc;
+      margin: 0 0 50px;
+      width: 900px;
+      height: 60px;
+
+    }
+    .actions input{
+      font-weight: bold;
+    text-decoration: none;
+    background: skyblue;
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    }
+}

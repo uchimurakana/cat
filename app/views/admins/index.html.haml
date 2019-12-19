@@ -1,0 +1,15 @@
+%header.header
+  .header__bar.row
+    %h1.grid-6
+    - if user_signed_in?
+      .user_nav.grid-6
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+      .cat
+        .cat__profile
+          = link_to'猫のプロフィールを投稿する',new_cat_path
+        .cat__notice
+          = link_to'お知らせを投稿する',new_home_path
+    - else
+      .grid-6
+        = link_to "ログイン", new_user_session_path, class: 'post'
+        = link_to "新規登録", new_user_registration_path, class: 'post'

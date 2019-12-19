@@ -1,0 +1,10 @@
+.home-post
+  .home-post__box
+    新情報を入力
+  = form_tag('/homes', method: :post) do
+    .home-post__title
+      %input#title{name: "title", placeholder: "タイトル", type: "text"}/
+    .home-post__comment
+      %textarea#comment{name: "comment", placeholder: "ここには自由にコメントを記入してください"}
+    .home-post__button
+      %input{type:"submit", value:"投稿する"}

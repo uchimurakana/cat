@@ -1,0 +1,49 @@
+%head
+  :javascript
+    $(document).ready(function() {
+        $('.slider').bxSlider({
+            auto: true,
+            pause: 5000,
+        });
+    });
+%body
+  #news.big-bg
+    %header.page-header.wrapper
+      %h1
+        %a{:href => "index.html"}
+          %img.logo{:src => "/images/logo.cat.png"}
+    .wrapper
+      %h2.page-title news
+  .new-contents.wrapper
+    %article
+      .slider
+        %img{:alt => "", :height => "300", :src => "/images/gazou1.jpg", :width => "500"}/
+        %img{:alt => "", :height => "300", :src => "/images/gazou2.jpg", :width => "500"}/
+        %img{:alt => "", :height => "300", :src => "/images/gazou3.jpg", :width => "500"}/
+        %img{:alt => "", :height => "300", :src => "/images/gazou4.jpg", :width => "500"}/
+      .home
+        .home__new
+          新着情報
+        - @homes.each do |home|
+          .home__new__content
+            %h3.time
+              = home.created_at.strftime("%Y年%m月%d日")
+              = home.title
+            %p.content
+              = home.comment
+      .ggmap
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.635994190237!2d135.49901442949655!3d34.66389468053969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e77b5c66fb11%3A0xc9e3af357945c49!2zVEVDSDo6RVhQRVJUIOOBquOCk-OBsOOCueOCq-OCpOOCquagoQ!5e0!3m2!1sja!2sjp!4v1573181675823!5m2!1sja!2sjp", :style => "border:0;", :width => "600"}
+    %aside
+      %ul.sind
+        -# %li
+        -#   %a{:href => "charge.html"} 料金・システム案内
+        %li
+          =link_to '猫ちゃん紹介', cats_path
+        -# %li
+        -#   %a{:href => "akusesu.html"} アクセス
+        -# %li
+        -#   %a{:href => "contact.html"} お問い合わせ
+  %footer
+    .wrapper
+      %p
+        %small © 2019 bandbox
