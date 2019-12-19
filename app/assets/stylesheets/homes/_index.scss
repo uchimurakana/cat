@@ -64,7 +64,6 @@ aside {
 /*-------------cat------------*/
 
 .list {
-  font: inherit;
   font-style: normal;
   font-weight: lighter;
   color: #000;
@@ -73,6 +72,9 @@ aside {
   font-size: 1.0rem;
   text-align: left;
   position: relative;
+  a{
+    color: #333;
+  }
 }
 
 .cat-image {

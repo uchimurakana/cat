@@ -15,16 +15,13 @@
     .cat-contents.wrapper
       .list
         - @cats.each do |cat|
-          .cat-image
-            %img{alt: "", src: "images/image1.jpg"}/
-            .cat-text
-              .cat__name
-                = cat.name
-              .cat__gender
-                = cat.sex
-              .cat__type
-                = cat.kind
-  %footer
-    .wrapper
-      %p
-        %small © 2019 bandbox
+          = link_to cat_path(cat.id) do
+            .cat-image
+              %img{alt: "", src: "images/image1.jpg"}/
+              .cat-text
+                .cat__name
+                  = cat.name
+                .cat__gender
+                  = cat.sex
+                .cat__type
+                  = cat.kind

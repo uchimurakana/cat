@@ -7,6 +7,8 @@ class CatsController < ApplicationController
   def create
     Neko.create!(cat_params)
   end
+  def show
+  end
   private
   def cat_params
     params.permit(:name, :sex,:image,:kind,:comment )
