@@ -1,0 +1,20 @@
+.show{
+  text-align: center;
+  color: #333;
+  &__name{
+    margin: 60px 0 0px;
+    padding: 3px 18px;
+    background: #485859;
+    color: #fff;
+    font-size: 1.75em;
+  }
+  &__cat{
+    margin: 0px 0 30px;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: relative;
+    background: #dde1e1;
+    color: #333;
+  }
+}

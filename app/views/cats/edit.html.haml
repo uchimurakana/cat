@@ -1,0 +1,14 @@
+.contents.row
+  = form_tag("/cats/#{@cat.id}", method: :patch ) do
+    %h3
+      編集する
+    %h2 名前
+    %input#name{name: "name",value:"#{@cat.name}", type: "text"}/
+    %h2 性別
+    %input#name{name: "sex", value:"#{@cat.sex}", type: "text"}/
+    %h2 種類
+    %input#name{name: "kind",value:"#{@cat.kind}", type: "text"}/
+    %h2 コメント
+    %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "10"}
+      =@cat.comment
+    %input#botann{:type => "submit", :value => "変更する"}/

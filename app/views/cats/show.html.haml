@@ -1,0 +1,21 @@
+.show
+  .show__img
+    = image_tag "gazou1.jpg",class:"sow"
+  .show__name
+    名前
+  .show__cat
+    = @cat.name
+  .show__name
+    性別
+  .show__cat
+    = @cat.sex
+  .show__name
+    種類
+  .show__cat
+    = @cat.kind
+  .show__name
+    コメント
+  .show__cat
+    = @cat.comment
+  .aaa
+    = link_to '戻る',cats_path

@@ -1,27 +1,34 @@
-%body
-  #news.big-bg
-    %header.page-header.wrapper
-      %h1
-        %a{:href => "index.html"}
-          %img.logo{:src => "images/logo.cat.png"}/
-      %nav
-        %ul.main-nav
-          %li
-            =link_to 'news',homes_path
-          %li
-            %a{:href => "contact.html"} お問い合わせ
-    .wrapper
-      %h2.page-title cat
-    .cat-contents.wrapper
-      .list
-        - @cats.each do |cat|
-          = link_to cat_path(cat.id) do
-            .cat-image
-              %img{alt: "", src: "images/image1.jpg"}/
-              .cat-text
-                .cat__name
-                  = cat.name
-                .cat__gender
-                  = cat.sex
-                .cat__type
-                  = cat.kind
+
+#news.big-bg
+  %header.page-header.wrapper
+    %h1
+      %a{:href => "index.html"}
+        %img.logo{:src => "images/logo.cat.png"}/
+    %nav
+      %ul.main-nav
+        %li
+          =link_to 'news',homes_path
+        %li
+          %a{:href => "contact.html"} お問い合わせ
+  .wrapper
+    %h2.page-title cat
+  .cat-contents.wrapper
+    .list
+      - @cats.each do |cat|
+        = link_to cat_path(cat.id) do
+          .cat-image
+            %img{alt: "", src: "images/image1.jpg"}/
+            .cat-text
+              .cat__name
+                = cat.name
+              .cat__gender
+                = cat.sex
+              .cat__type
+                = cat.kind
+          - if user_signed_in?
+            .comment__container__lis.asd
+              = link_to edit_cat_path(cat.id), class: "buy-button"   do
+                %p.buy-text 商品の編集
+            .comment__container__lis
+              = link_to "/cats/#{cat.id}" ,method: :delete, data: {confirm: '削除すると二度と復活できません。',cancel: 'やめる', commit: '削除'}, title: '確認' do
+                %p.buy-text この商品を削除
