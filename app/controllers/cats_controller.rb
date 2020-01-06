@@ -21,7 +21,7 @@ class CatsController < ApplicationController
     cat = Neko.find(params[:id])
     cat.destroy
     #destroyメソッドを使用し対象のツイートを削除する。
-    redirect_to root_path
+    redirect_to cats_path
   end
   
   private
