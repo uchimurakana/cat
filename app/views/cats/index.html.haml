@@ -25,10 +25,10 @@
                 = cat.sex
               .cat__type
                 = cat.kind
-          - if user_signed_in?
-            .comment__container__lis.asd
-              = link_to edit_cat_path(cat.id), class: "buy-button"   do
-                %p.buy-text 商品の編集
-            .comment__container__lis
-              = link_to "/cats/#{cat.id}" ,method: :delete, data: {confirm: '削除すると二度と復活できません。',cancel: 'やめる', commit: '削除'}, title: '確認' do
-                %p.buy-text この商品を削除
+            - if user_signed_in?
+              .comment__container__lis
+                = link_to edit_cat_path(cat.id), class: "buy-button"   do
+                  %p.buy-text 編集
+              .comment__container__lis
+                = link_to "/cats/#{cat.id}" ,method: :delete, data: {confirm: '削除すると二度と復活できません。',cancel: 'やめる', commit: '削除'}, title: '確認' do
+                  %p.buy-text 削除
